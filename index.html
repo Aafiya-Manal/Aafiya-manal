@@ -1,0 +1,2056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aafiya Manal — Student Innovator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #080A0F;
+    --bg2: #0D1017;
+    --bg3: #111520;
+    --surface: rgba(255,255,255,0.04);
+    --surface2: rgba(255,255,255,0.07);
+    --border: rgba(255,255,255,0.08);
+    --border2: rgba(100,160,255,0.2);
+    --blue: #4A9EFF;
+    --blue2: #7AB8FF;
+    --purple: #A78BFA;
+    --text: #F0F4FF;
+    --text2: #8B99B5;
+    --text3: #5A6880;
+    --accent: #4A9EFF;
+    --glow: rgba(74,158,255,0.15);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.2rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(8,10,15,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 0.5px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    color: var(--text);
+  }
+  .nav-links { display: flex; gap: 2rem; }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--text2);
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--blue); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 8rem 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 0%, rgba(74,158,255,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 40% at 80% 60%, rgba(167,139,250,0.08) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(74,158,255,0.1);
+    border: 0.5px solid rgba(74,158,255,0.3);
+    border-radius: 100px;
+    padding: 6px 16px;
+    font-size: 0.78rem;
+    color: var(--blue2);
+    letter-spacing: 0.06em;
+    margin-bottom: 2rem;
+    animation: fadeUp 0.8s ease both;
+  }
+  .hero-badge::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--blue);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, #fff 40%, #7AB8FF 70%, #A78BFA 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1.2rem;
+    animation: fadeUp 0.8s 0.1s ease both;
+  }
+
+  .hero-sub {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    letter-spacing: 0.18em;
+    color: var(--blue2);
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.8s 0.2s ease both;
+  }
+
+  .hero-mission {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+    font-weight: 600;
+    color: var(--blue2);
+    letter-spacing: 0.01em;
+    margin-bottom: 0.75rem;
+    font-style: italic;
+    animation: fadeUp 0.8s 0.15s ease both;
+  }
+
+  /* TIMELINE */
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 3rem;
+    position: relative;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 8px;
+    bottom: 8px;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--blue), var(--purple), transparent);
+    opacity: 0.3;
+  }
+  .timeline-item {
+    position: relative;
+    padding: 0 0 2rem 1.5rem;
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -1.45rem;
+    top: 8px;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--blue);
+    border: 2px solid var(--bg);
+  }
+  .timeline-year {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    color: var(--blue);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+  .timeline-event {
+    font-size: 0.95rem;
+    color: var(--text2);
+    line-height: 1.6;
+  }
+  .timeline-event strong { color: var(--text); font-weight: 500; }
+
+  /* CURRENT FOCUS */
+  .focus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+  .focus-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 14px;
+    padding: 1.25rem;
+    transition: border-color 0.3s, transform 0.2s;
+  }
+  .focus-item:hover {
+    border-color: var(--border2);
+    transform: translateY(-2px);
+  }
+  .focus-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--blue);
+    flex-shrink: 0;
+    margin-top: 7px;
+    box-shadow: 0 0 8px var(--blue);
+    animation: pulse 2s infinite;
+  }
+  .focus-text { font-size: 0.9rem; color: var(--text2); line-height: 1.5; }
+
+  /* DIFFERENTIATOR */
+  .diff-card {
+    background: linear-gradient(135deg, rgba(74,158,255,0.06) 0%, rgba(167,139,250,0.06) 100%);
+    border: 0.5px solid rgba(74,158,255,0.2);
+    border-radius: 20px;
+    padding: 2.5rem;
+    margin-top: 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .diff-card::before {
+    content: '"';
+    position: absolute;
+    top: -0.5rem; left: 1.5rem;
+    font-family: 'Syne', sans-serif;
+    font-size: 6rem;
+    font-weight: 800;
+    color: var(--blue);
+    opacity: 0.08;
+    line-height: 1;
+  }
+  .diff-text {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.65;
+    position: relative;
+  }
+  .diff-text em { color: var(--blue); font-style: normal; }
+
+  /* AVAILABILITY */
+  .avail-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    background: rgba(74,158,255,0.05);
+    border: 0.5px solid rgba(74,158,255,0.15);
+    border-radius: 14px;
+    padding: 1.25rem 2rem;
+    margin-top: 2rem;
+  }
+  .avail-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: #22c55e;
+    box-shadow: 0 0 8px #22c55e;
+    animation: pulse 2s infinite;
+    flex-shrink: 0;
+  }
+  .avail-text {
+    font-size: 0.88rem;
+    color: var(--text2);
+  }
+  .avail-text strong { color: var(--text); font-weight: 500; }
+
+  .hero-tagline {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    color: var(--text2);
+    max-width: 540px;
+    line-height: 1.7;
+    animation: fadeUp 0.8s 0.3s ease both;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 3rem;
+    animation: fadeUp 0.8s 0.4s ease both;
+  }
+  .stat-pill {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 100px;
+    padding: 8px 18px;
+    font-size: 0.8rem;
+    color: var(--text2);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .stat-pill span { color: var(--text); font-weight: 500; }
+
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--blue);
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Syne', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 14px 32px;
+    border-radius: 100px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    animation: fadeUp 0.8s 0.5s ease both;
+    box-shadow: 0 0 40px rgba(74,158,255,0.3);
+  }
+  .cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 40px rgba(74,158,255,0.5);
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* SECTIONS */
+  section {
+    padding: 6rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    color: var(--blue);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--text);
+    margin-bottom: 1rem;
+  }
+
+  .section-desc {
+    color: var(--text2);
+    font-size: 1.05rem;
+    max-width: 600px;
+    line-height: 1.75;
+  }
+
+  /* WHO I AM */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin-top: 3rem;
+  }
+
+  .about-card {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 20px;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .about-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--blue), transparent);
+    opacity: 0.5;
+  }
+
+  .about-text {
+    font-size: 1.1rem;
+    color: var(--text2);
+    line-height: 1.85;
+  }
+  .about-text strong { color: var(--text); font-weight: 500; }
+
+  .values-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .value-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text2);
+    font-size: 0.95rem;
+  }
+  .value-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--blue);
+    flex-shrink: 0;
+  }
+
+  /* PROJECTS */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .project-card {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 20px;
+    padding: 2rem;
+    transition: border-color 0.3s, transform 0.3s;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+  }
+  .project-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(74,158,255,0.05) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .project-card:hover {
+    border-color: rgba(74,158,255,0.3);
+    transform: translateY(-4px);
+  }
+  .project-card:hover::after { opacity: 1; }
+
+  .project-icon {
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+  }
+  .icon-blue { background: rgba(74,158,255,0.12); }
+  .icon-purple { background: rgba(167,139,250,0.12); }
+
+  .project-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.6rem;
+  }
+
+  .project-desc {
+    font-size: 0.9rem;
+    color: var(--text2);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .feature-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .tag {
+    background: rgba(74,158,255,0.08);
+    border: 0.5px solid rgba(74,158,255,0.2);
+    border-radius: 100px;
+    padding: 4px 12px;
+    font-size: 0.75rem;
+    color: var(--blue2);
+  }
+
+  /* RESEARCH */
+  .research-panel {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 20px;
+    padding: 2.5rem;
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .research-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: var(--purple);
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .research-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.8rem;
+  }
+
+  /* IMPACT METRICS */
+  .impact-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 0.5px solid var(--border);
+  }
+  .metric {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 4px;
+  }
+  .metric-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--blue);
+    line-height: 1;
+  }
+  .metric-label {
+    font-size: 0.68rem;
+    color: var(--text3);
+    line-height: 1.3;
+  }
+
+  /* METHODOLOGY */
+  .method-block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background: rgba(74,158,255,0.05);
+    border: 0.5px solid rgba(74,158,255,0.15);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    margin-top: 1rem;
+  }
+  .method-row {
+    display: flex;
+    gap: 12px;
+    font-size: 0.85rem;
+  }
+  .method-key {
+    color: var(--text3);
+    min-width: 90px;
+    flex-shrink: 0;
+  }
+  .method-val { color: var(--text2); }
+
+  .findings-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .findings-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.88rem;
+    color: var(--text2);
+    line-height: 1.5;
+  }
+  .findings-list li::before {
+    content: '';
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--purple);
+    flex-shrink: 0;
+    margin-top: 7px;
+  }
+
+  /* GLOBAL ASPIRATIONS */
+  .aspiration-panel {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 20px;
+    padding: 2.5rem;
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 3rem;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .aspiration-panel::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--purple), var(--blue), transparent);
+    opacity: 0.5;
+  }
+  .aspiration-text {
+    font-size: 1.05rem;
+    color: var(--text2);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+  .aspiration-text strong { color: var(--text); font-weight: 500; }
+  .aspiration-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .asp-tag {
+    background: rgba(167,139,250,0.08);
+    border: 0.5px solid rgba(167,139,250,0.2);
+    border-radius: 100px;
+    padding: 6px 14px;
+    font-size: 0.78rem;
+    color: var(--purple);
+  }
+  .aspiration-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+    min-width: 100px;
+  }
+  .aspiration-stat { display: flex; flex-direction: column; gap: 4px; }
+  .asp-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--blue);
+    line-height: 1;
+  }
+  .asp-label { font-size: 0.72rem; color: var(--text3); }
+  @media (max-width: 600px) {
+    .aspiration-panel { grid-template-columns: 1fr; }
+    .aspiration-right { flex-direction: row; justify-content: center; }
+  }
+
+  /* SKILLS */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+
+  .skill-card {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: border-color 0.3s;
+  }
+  .skill-card:hover { border-color: var(--border2); }
+
+  .skill-name {
+    font-size: 0.85rem;
+    color: var(--text2);
+    margin-bottom: 1rem;
+    font-weight: 400;
+  }
+
+  .skill-bar {
+    height: 3px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 100px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+  }
+  .skill-fill {
+    height: 100%;
+    border-radius: 100px;
+    background: linear-gradient(90deg, var(--blue), var(--purple));
+  }
+
+  .skill-level {
+    font-size: 0.75rem;
+    color: var(--text3);
+  }
+
+  /* VISION */
+  .vision-section {
+    background: var(--bg2);
+    border-top: 0.5px solid var(--border);
+    border-bottom: 0.5px solid var(--border);
+    padding: 6rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .vision-section::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px; height: 300px;
+    background: radial-gradient(ellipse, rgba(74,158,255,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .vision-text {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.3rem, 3vw, 2rem);
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--text);
+    max-width: 700px;
+    margin: 0 auto 2rem;
+  }
+  .vision-text em {
+    font-style: normal;
+    color: var(--blue);
+  }
+
+  /* VALUES */
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+  @media (min-width: 600px) {
+    .values-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  .value-card {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 16px;
+    padding: 1.5rem 1.25rem;
+    text-align: center;
+  }
+
+  .value-icon {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+  }
+  .value-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.3rem;
+  }
+  .value-sub {
+    font-size: 0.75rem;
+    color: var(--text3);
+  }
+
+  /* CONTACT */
+  .contact-panel {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 24px;
+    padding: 3rem;
+    margin-top: 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .contact-panel::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--blue), var(--purple), transparent);
+  }
+
+  .contact-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    background: var(--surface2);
+    border: 0.5px solid var(--border);
+    border-radius: 100px;
+    padding: 10px 22px;
+    font-size: 0.85rem;
+    color: var(--text2);
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .contact-link:hover {
+    color: var(--blue);
+    border-color: rgba(74,158,255,0.3);
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 0.5px solid var(--border);
+    padding: 2rem;
+    text-align: center;
+    color: var(--text3);
+    font-size: 0.8rem;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .about-grid,
+    .research-panel { grid-template-columns: 1fr; gap: 1.5rem; }
+    .nav-links { display: none; }
+    .values-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* DIVIDER */
+  .divider {
+    width: 100%;
+    height: 0.5px;
+    background: var(--border);
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* HIGHLIGHT ITEMS */
+  .highlight-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 16px;
+    padding: 1.5rem 1.75rem;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .highlight-item:hover {
+    border-color: var(--border2);
+    transform: translateX(4px);
+  }
+  .highlight-icon {
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .highlight-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.35rem;
+  }
+  .highlight-desc {
+    font-size: 0.9rem;
+    color: var(--text2);
+    line-height: 1.7;
+  }
+
+  /* AT A GLANCE */
+  .glance-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  @media (max-width: 768px) { .glance-grid { grid-template-columns: 1fr; } }
+
+  .glance-card {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 20px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .glance-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--blue), transparent);
+    opacity: 0.4;
+  }
+  .glance-card-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 1.5rem;
+  }
+  .glance-rows { display: flex; flex-direction: column; gap: 0.85rem; }
+  .glance-row {
+    display: grid;
+    grid-template-columns: 20px 90px 1fr;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.88rem;
+  }
+  .glance-icon { font-size: 0.95rem; }
+  .glance-key { color: var(--text3); font-size: 0.8rem; }
+  .glance-val { color: var(--text); font-weight: 400; }
+
+  .seeking-list { display: flex; flex-direction: column; gap: 0.9rem; }
+  .seeking-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.92rem;
+    color: var(--text2);
+    padding: 0.7rem 1rem;
+    background: rgba(74,158,255,0.04);
+    border: 0.5px solid rgba(74,158,255,0.1);
+    border-radius: 10px;
+  }
+  .seek-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--blue);
+    flex-shrink: 0;
+  }
+
+  /* ═══ VISUAL EFFECTS ═══ */
+
+  /* Card hover lift — spring bounce */
+  .project-card {
+    transition: border-color 0.3s, transform 0.35s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.35s;
+  }
+  .project-card:hover {
+    transform: translateY(-8px) scale(1.01);
+    border-color: rgba(74,158,255,0.3);
+    box-shadow: 0 24px 48px rgba(0,0,0,0.35), 0 0 30px rgba(74,158,255,0.07);
+  }
+  .about-card {
+    transition: border-color 0.3s, transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
+  }
+  .about-card:hover { transform: translateY(-4px); border-color: var(--border2); }
+  .highlight-item {
+    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  }
+  .highlight-item:hover {
+    box-shadow: 0 8px 32px rgba(74,158,255,0.07);
+  }
+  .focus-item:hover {
+    box-shadow: 0 8px 24px rgba(74,158,255,0.08);
+  }
+  .contact-link:hover {
+    box-shadow: 0 0 20px rgba(74,158,255,0.15);
+  }
+
+  /* Button glow pulse animation */
+  .cta-btn {
+    animation: fadeUp 0.8s 0.5s ease both, btnGlow 3s 1.5s ease-in-out infinite;
+  }
+  @keyframes btnGlow {
+    0%, 100% { box-shadow: 0 0 24px rgba(74,158,255,0.35), 0 0 60px rgba(74,158,255,0.12); }
+    50% { box-shadow: 0 0 50px rgba(74,158,255,0.65), 0 0 90px rgba(74,158,255,0.25); }
+  }
+
+  /* Hero badge pulse */
+  .hero-badge {
+    animation: fadeUp 0.8s ease both, badgePulse 4s 1s ease-in-out infinite;
+  }
+  @keyframes badgePulse {
+    0%, 100% { border-color: rgba(74,158,255,0.3); }
+    50% { border-color: rgba(74,158,255,0.7); box-shadow: 0 0 16px rgba(74,158,255,0.15); }
+  }
+
+  /* Skill bars animate in on scroll */
+  .skill-fill {
+    width: 0% !important;
+    transition: width 1.3s cubic-bezier(0.4,0,0.2,1);
+  }
+  .skill-card.visible .skill-fill {
+    width: var(--fill) !important;
+  }
+
+  /* Animated dividers */
+  .divider {
+    background: linear-gradient(90deg, transparent, rgba(74,158,255,0.18), rgba(167,139,250,0.18), transparent);
+    animation: dividerPulse 4s ease-in-out infinite;
+  }
+  @keyframes dividerPulse {
+    0%,100% { opacity: 0.5; }
+    50% { opacity: 1; }
+  }
+
+  /* SCROLL PROGRESS BAR */
+  #scroll-progress {
+    position: fixed;
+    top: 0; left: 0;
+    height: 2px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--blue), var(--purple));
+    z-index: 9999;
+    transition: width 0.1s linear;
+    box-shadow: 0 0 8px rgba(74,158,255,0.5);
+  }
+
+  /* CURSOR GLOW */
+  #cursor-glow {
+    display: none;
+  }
+
+  /* MOUSE TRAIL CANVAS — fullscreen overlay */
+  #trail-canvas {
+    position: fixed;
+    inset: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 9997;
+  }
+
+  /* HERO CANVAS */
+  #hero-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    opacity: 0.7;
+  }
+
+  /* TYPING TEXT */
+  .typing-line {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    color: var(--text3);
+    margin-bottom: 2.5rem;
+    min-height: 1.5rem;
+    animation: fadeUp 0.8s 0.55s ease both;
+  }
+  #typing-text::after {
+    content: '█';
+    color: var(--blue);
+    animation: blink 1s step-end infinite;
+    font-size: 0.85em;
+    margin-left: 2px;
+  }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+  /* AURA CHATBOT BUTTON */
+  #aura-btn {
+    position: fixed;
+    bottom: 2rem; right: 2rem;
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #4A9EFF, #A78BFA);
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    z-index: 9990;
+    box-shadow: 0 4px 24px rgba(74,158,255,0.5);
+    transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s;
+  }
+  #aura-btn:hover { transform: scale(1.1); box-shadow: 0 8px 32px rgba(74,158,255,0.7); }
+  #aura-btn.active { transform: scale(0.95); }
+  #aura-pulse {
+    position: absolute;
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: rgba(74,158,255,0.3);
+    animation: auraPulse 2.5s ease-out infinite;
+  }
+  @keyframes auraPulse {
+    0% { transform: scale(1); opacity: 0.6; }
+    100% { transform: scale(1.8); opacity: 0; }
+  }
+  #aura-icon { font-size: 1.4rem; color: #fff; position: relative; z-index: 1; }
+
+  /* AURA WIDGET */
+  #aura-widget {
+    position: fixed;
+    bottom: 5.5rem; right: 2rem;
+    width: 360px;
+    max-height: 520px;
+    background: #0D1017;
+    border: 0.5px solid rgba(74,158,255,0.25);
+    border-radius: 20px;
+    display: flex; flex-direction: column;
+    z-index: 9989;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 40px rgba(74,158,255,0.1);
+    opacity: 0; pointer-events: none;
+    transform: translateY(16px) scale(0.97);
+    transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
+  }
+  #aura-widget.open { opacity: 1; pointer-events: all; transform: translateY(0) scale(1); }
+
+  #aura-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 1.25rem;
+    border-bottom: 0.5px solid rgba(255,255,255,0.07);
+    flex-shrink: 0;
+  }
+  #aura-header-left { display: flex; align-items: center; gap: 10px; }
+  #aura-avatar {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: linear-gradient(135deg, #4A9EFF, #A78BFA);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; color: #fff; flex-shrink: 0;
+  }
+  #aura-name { font-family: \'Syne\', sans-serif; font-weight: 700; font-size: 0.95rem; color: #F0F4FF; }
+  #aura-status { display: flex; align-items: center; gap: 5px; font-size: 0.72rem; color: #5A6880; }
+  #aura-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: #22c55e; box-shadow: 0 0 6px #22c55e;
+    display: inline-block; animation: pulse 2s infinite;
+  }
+  #aura-close {
+    background: none; border: none; color: #5A6880;
+    font-size: 0.9rem; cursor: pointer; padding: 4px;
+    transition: color 0.2s;
+  }
+  #aura-close:hover { color: #F0F4FF; }
+
+  #aura-messages {
+    flex: 1; overflow-y: auto; padding: 1rem;
+    display: flex; flex-direction: column; gap: 0.75rem;
+    scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.08) transparent;
+  }
+  .aura-msg { display: flex; }
+  .aura-user { justify-content: flex-end; }
+  .aura-bot { justify-content: flex-start; }
+  .aura-bubble {
+    max-width: 82%;
+    padding: 0.65rem 0.9rem;
+    border-radius: 14px;
+    font-size: 0.86rem;
+    line-height: 1.6;
+  }
+  .aura-user .aura-bubble {
+    background: linear-gradient(135deg, #4A9EFF, #7B6CF6);
+    color: #fff;
+    border-bottom-right-radius: 4px;
+  }
+  .aura-bot .aura-bubble {
+    background: rgba(255,255,255,0.05);
+    border: 0.5px solid rgba(255,255,255,0.08);
+    color: #8B99B5;
+    border-bottom-left-radius: 4px;
+  }
+  .aura-bot .aura-bubble strong { color: #F0F4FF; }
+
+  .aura-suggestions {
+    display: flex; flex-wrap: wrap; gap: 6px;
+    margin-top: 0.75rem;
+  }
+  .aura-suggestions button {
+    background: rgba(74,158,255,0.08);
+    border: 0.5px solid rgba(74,158,255,0.2);
+    border-radius: 100px;
+    padding: 5px 12px;
+    font-size: 0.75rem; color: #7AB8FF;
+    cursor: pointer; transition: background 0.2s;
+  }
+  .aura-suggestions button:hover { background: rgba(74,158,255,0.18); }
+
+  .aura-typing-dots { display: flex; align-items: center; gap: 4px; padding: 0.8rem 1rem !important; }
+  .aura-typing-dots span {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: #4A9EFF; opacity: 0.4;
+    animation: typingBounce 1.2s ease infinite;
+  }
+  .aura-typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+  .aura-typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes typingBounce {
+    0%,60%,100% { transform: translateY(0); opacity: 0.4; }
+    30% { transform: translateY(-5px); opacity: 1; }
+  }
+
+  #aura-input-row {
+    display: flex; align-items: center; gap: 8px;
+    padding: 0.75rem 1rem;
+    border-top: 0.5px solid rgba(255,255,255,0.07);
+    flex-shrink: 0;
+  }
+  #aura-input {
+    flex: 1; background: rgba(255,255,255,0.05);
+    border: 0.5px solid rgba(255,255,255,0.1);
+    border-radius: 100px; padding: 8px 14px;
+    font-size: 0.85rem; color: #F0F4FF;
+    font-family: \'DM Sans\', sans-serif;
+    outline: none; transition: border-color 0.2s;
+  }
+  #aura-input:focus { border-color: rgba(74,158,255,0.4); }
+  #aura-input::placeholder { color: #3A4860; }
+  #aura-send {
+    width: 34px; height: 34px; border-radius: 50%;
+    background: linear-gradient(135deg, #4A9EFF, #A78BFA);
+    border: none; color: #fff; font-size: 1rem;
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    transition: transform 0.2s, opacity 0.2s; flex-shrink: 0;
+  }
+  #aura-send:hover { transform: scale(1.1); }
+  #aura-send:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+
+  @media (max-width: 480px) {
+    #aura-widget { width: calc(100vw - 2rem); right: 1rem; bottom: 5rem; }
+    #aura-btn { right: 1rem; bottom: 1rem; }
+  }
+
+  /* SCROLL ANIMATION */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+</style>
+</head>
+<body>
+
+<!-- SCROLL PROGRESS -->
+<div id="scroll-progress"></div>
+
+<!-- CURSOR GLOW -->
+<div id="cursor-glow"></div>
+<canvas id="trail-canvas"></canvas>
+
+<nav>
+  <div class="nav-logo">AM</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#focus">Now</a>
+    <a href="#projects">Projects</a>
+    <a href="#highlights">Highlights</a>
+    <a href="#research">Research</a>
+    <a href="#journey">Journey</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="grid-bg"></div>
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-badge">Open to global programs & collaborations</div>
+  <h1>Aafiya Manal</h1>
+  <p class="hero-sub">Student Innovator &nbsp;·&nbsp; AI Explorer &nbsp;·&nbsp; Builder</p>
+  <p class="hero-mission">"On a mission to redesign how students learn in the age of AI."</p>
+  <p class="hero-tagline">Student researcher and builder designing AI systems for deeper learning, not shortcuts.</p>
+  <p class="typing-line"><span id="typing-text"></span></p>
+  <div class="hero-stats">
+    <div class="stat-pill">Age <span>14</span></div>
+    <div class="stat-pill">Grade <span>10</span></div>
+    <div class="stat-pill">📍 <span>India</span></div>
+    <div class="stat-pill">Focus <span>AI + Education</span></div>
+  </div>
+  <a href="#projects" class="cta-btn">Explore My Work ↓</a>
+</div>
+
+<div class="divider"></div>
+
+<!-- WHO I AM -->
+<section id="about">
+  <div class="reveal">
+    <p class="section-label">Who I Am</p>
+    <h2 class="section-title">Thinking beyond<br>the classroom.</h2>
+  </div>
+  <div class="about-grid">
+    <div class="about-card reveal">
+      <p class="about-text">
+        A student entrepreneur exploring how <strong>artificial intelligence can act as a cognitive amplifier</strong> rather than a shortcut. Passionate about building ideas and tools that empower students to learn deeply, solve problems, and use technology responsibly.
+      </p>
+      <p class="about-text" style="margin-top: 1.2rem;">
+        I believe the most powerful use of AI is not to replace thinking — but to <strong>expand what students are capable of thinking</strong> in the first place.
+      </p>
+    </div>
+    <div class="reveal">
+      <ul class="values-list">
+        <li class="value-item"><span class="value-dot"></span>Curiosity over comfort</li>
+        <li class="value-item"><span class="value-dot"></span>Depth over shortcuts</li>
+        <li class="value-item"><span class="value-dot"></span>Learning over performance</li>
+        <li class="value-item"><span class="value-dot"></span>Impact over recognition</li>
+        <li class="value-item"><span class="value-dot"></span>Responsible technology adoption</li>
+        <li class="value-item"><span class="value-dot"></span>Systems thinking at every scale</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CURRENT FOCUS -->
+<section id="focus">
+  <div class="reveal">
+    <p class="section-label">Current Focus</p>
+    <h2 class="section-title">What I'm doing right now.</h2>
+  </div>
+  <div class="focus-grid">
+    <div class="focus-item reveal">
+      <span class="focus-dot"></span>
+      <p class="focus-text">Studying student–AI interaction patterns and what they reveal about learning behaviour</p>
+    </div>
+    <div class="focus-item reveal" style="transition-delay:0.05s;">
+      <span class="focus-dot"></span>
+      <p class="focus-text">Developing the StudyAura concept — features, research foundation, and user experience</p>
+    </div>
+    <div class="focus-item reveal" style="transition-delay:0.1s;">
+      <span class="focus-dot"></span>
+      <p class="focus-text">Exploring ethical AI frameworks in education and responsible design principles</p>
+    </div>
+    <div class="focus-item reveal" style="transition-delay:0.15s;">
+      <span class="focus-dot"></span>
+      <p class="focus-text">Preparing applications for global academic programs and international youth opportunities</p>
+    </div>
+  </div>
+  <div class="avail-banner reveal">
+    <span class="avail-dot"></span>
+    <p class="avail-text"><strong>Open to:</strong> internships, research projects, youth programs, exchange opportunities, and collaborations.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="reveal">
+    <p class="section-label">Projects</p>
+    <h2 class="section-title">What I'm building.</h2>
+    <p class="section-desc">Ideas turned into systems. Each project starts with a student problem and works toward a real solution.</p>
+  </div>
+  <div class="projects-grid">
+    <div class="project-card reveal">
+      <div class="project-icon icon-blue">🧠</div>
+      <div class="project-name">StudyAura — AI Learning Platform</div>
+      <div style="display:flex; gap:8px; margin-bottom:0.75rem; flex-wrap:wrap;">
+        <span style="background:rgba(74,158,255,0.1);border:0.5px solid rgba(74,158,255,0.25);border-radius:100px;padding:3px 12px;font-size:0.72rem;color:var(--blue2);">Status: Research & concept development</span>
+      </div>
+      <p class="project-desc">An AI-powered study assistant concept designed to help students use AI as a thinking partner — not a replacement for learning.</p>
+      <p style="font-size:0.82rem;color:var(--text3);margin-bottom:1rem;font-style:italic;">Goal: Build an AI that guides thinking, not shortcuts.</p>
+      <div class="feature-tags">
+        <span class="tag">AI Tutor</span>
+        <span class="tag">Flashcard Generator</span>
+        <span class="tag">Math Solver</span>
+        <span class="tag">Motivation System</span>
+      </div>
+      <div class="impact-metrics">
+        <div class="metric"><span class="metric-num">4</span><span class="metric-label">Core Features Designed</span></div>
+        <div class="metric"><span class="metric-num">1</span><span class="metric-label">Student Problem Solved</span></div>
+        <div class="metric"><span class="metric-num">∞</span><span class="metric-label">Learning Potential</span></div>
+      </div>
+    </div>
+    <div class="project-card reveal" style="transition-delay: 0.1s;">
+      <div class="project-icon icon-purple">🌐</div>
+      <div class="project-name">KhadimHost — Digital Solutions Initiative</div>
+      <div style="display:flex; gap:8px; margin-bottom:0.75rem; flex-wrap:wrap;">
+        <span style="background:rgba(167,139,250,0.1);border:0.5px solid rgba(167,139,250,0.25);border-radius:100px;padding:3px 12px;font-size:0.72rem;color:var(--purple);">Status: Early-stage startup concept</span>
+      </div>
+      <p class="project-desc">A digital solutions initiative helping small businesses build an effective online presence through websites, branding, and digital tools.</p>
+      <p style="font-size:0.82rem;color:var(--text3);margin-bottom:1rem;font-style:italic;">Focus: Helping small businesses build their online presence.</p>
+      <div class="feature-tags">
+        <span class="tag">Web Design</span>
+        <span class="tag">Branding</span>
+        <span class="tag">Digital Tools</span>
+        <span class="tag">SME Focus</span>
+      </div>
+      <div class="impact-metrics">
+        <div class="metric"><span class="metric-num">3+</span><span class="metric-label">Services Offered</span></div>
+        <div class="metric"><span class="metric-num">SME</span><span class="metric-label">Target Audience</span></div>
+        <div class="metric"><span class="metric-num">🇮🇳</span><span class="metric-label">India-Based Initiative</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- HIGHLIGHTS -->
+<section id="highlights">
+  <div class="reveal">
+    <p class="section-label">Highlights</p>
+    <h2 class="section-title">What I've done so far.</h2>
+  </div>
+  <div style="display:flex; flex-direction:column; gap:1rem; margin-top:3rem;">
+    <div class="highlight-item reveal">
+      <div class="highlight-icon">🧠</div>
+      <div>
+        <p class="highlight-title">Student AI Behavior Research</p>
+        <p class="highlight-desc">Conducted original interviews with students to map how they actually use AI — uncovering gaps in guidance, misuse patterns, and missed opportunities for deeper learning.</p>
+      </div>
+    </div>
+    <div class="highlight-item reveal" style="transition-delay:0.05s;">
+      <div class="highlight-icon">🚀</div>
+      <div>
+        <p class="highlight-title">Founder — StudyAura</p>
+        <p class="highlight-desc">Conceptualised and designed an AI-powered study assistant that uses AI as a cognitive amplifier, not a shortcut — featuring tutoring, flashcard generation, and a motivation system.</p>
+      </div>
+    </div>
+    <div class="highlight-item reveal" style="transition-delay:0.1s;">
+      <div class="highlight-icon">🌐</div>
+      <div>
+        <p class="highlight-title">Founder — KhadimHost</p>
+        <p class="highlight-desc">Launched a digital solutions initiative helping small businesses establish meaningful online presence through websites, branding, and accessible digital tools.</p>
+      </div>
+    </div>
+    <div class="highlight-item reveal" style="transition-delay:0.15s;">
+      <div class="highlight-icon">🎓</div>
+      <div>
+        <p class="highlight-title">Pursuing Global Academic Opportunities</p>
+        <p class="highlight-desc">Actively applying to international programs, competitions, and scholarships — committed to connecting local insight with global impact.</p>
+      </div>
+    </div>
+    <div class="highlight-item reveal" style="transition-delay:0.2s;">
+      <div class="highlight-icon">📊</div>
+      <div>
+        <p class="highlight-title">Focus: AI + Education Systems</p>
+        <p class="highlight-desc">Dedicated to understanding how AI can be designed into learning environments responsibly — building systems that expand what students are capable of, not replace what they should be doing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- RESEARCH -->
+<section id="research">
+  <div class="reveal">
+    <p class="section-label">Research & Exploration</p>
+    <h2 class="section-title">Questions I'm<br>investigating.</h2>
+  </div>
+  <div class="research-panel reveal">
+    <div>
+      <p class="research-label">Student AI Behavior Study</p>
+      <p class="research-title">How do students actually use AI?</p>
+      <p style="color: var(--text2); font-size: 0.9rem; line-height: 1.75; margin-bottom: 1.25rem;">
+        An original peer research study exploring how students interact with AI tools in learning environments — and what that reveals about the gap between AI availability and AI literacy.
+      </p>
+      <div class="method-block">
+        <div class="method-row"><span class="method-key">Method</span><span class="method-val">Semi-structured peer interviews</span></div>
+        <div class="method-row"><span class="method-key">Participants</span><span class="method-val">Middle & high school students</span></div>
+      </div>
+      <p style="font-size: 0.75rem; letter-spacing: 0.1em; color: var(--purple); text-transform: uppercase; font-weight: 500; margin: 1.25rem 0 0.75rem;">Key Findings</p>
+      <ul class="findings-list">
+        <li>Heavy reliance on AI for answers without understanding</li>
+        <li>Weak personal time management systems</li>
+        <li>Lack of AI literacy among students</li>
+        <li>Strong need for guided, structured learning tools</li>
+      </ul>
+    </div>
+    <div>
+      <p class="research-label">Design Goal</p>
+      <p class="research-title">Build tools that encourage depth.</p>
+      <p style="color: var(--text2); font-size: 0.95rem; line-height: 1.75;">
+        The research shapes my product thinking — every feature I design aims to encourage productive, responsible technology use and help students develop real understanding rather than surface-level answers.
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="reveal">
+    <p class="section-label">Capabilities</p>
+    <h2 class="section-title">Skills & Strengths.</h2>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-card reveal">
+      <p class="skill-name">Analytical Thinking</p>
+      <div class="skill-bar"><div class="skill-fill" style="--fill:88%"></div></div>
+      <p class="skill-level">Advanced</p>
+    </div>
+    <div class="skill-card reveal" style="transition-delay:0.05s;">
+      <p class="skill-name">Creative Problem Solving</p>
+      <div class="skill-bar"><div class="skill-fill" style="--fill:90%"></div></div>
+      <p class="skill-level">Advanced</p>
+    </div>
+    <div class="skill-card reveal" style="transition-delay:0.1s;">
+      <p class="skill-name">AI Tool Literacy</p>
+      <div class="skill-bar"><div class="skill-fill" style="--fill:85%"></div></div>
+      <p class="skill-level">Proficient</p>
+    </div>
+    <div class="skill-card reveal" style="transition-delay:0.15s;">
+      <p class="skill-name">Communication</p>
+      <div class="skill-bar"><div class="skill-fill" style="--fill:82%"></div></div>
+      <p class="skill-level">Proficient</p>
+    </div>
+    <div class="skill-card reveal" style="transition-delay:0.2s;">
+      <p class="skill-name">Digital Design</p>
+      <div class="skill-bar"><div class="skill-fill" style="--fill:75%"></div></div>
+      <p class="skill-level">Developing</p>
+    </div>
+    <div class="skill-card reveal" style="transition-delay:0.25s;">
+      <p class="skill-name">Systems Thinking</p>
+      <div class="skill-bar"><div class="skill-fill" style="--fill:80%"></div></div>
+      <p class="skill-level">Proficient</p>
+    </div>
+  </div>
+</section>
+
+<!-- VISION -->
+<div class="vision-section">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <p class="section-label" style="margin-bottom: 1.5rem;">Future Vision</p>
+    <p class="vision-text">
+      Aspires to work at the intersection of <em>technology</em>, <em>education</em>, and <em>human development</em> — building systems that expand opportunities for students worldwide.
+    </p>
+    <p style="color: var(--text3); font-size: 0.9rem;">The problem is global. The solution starts local.</p>
+  </div>
+</div>
+
+<!-- VALUES -->
+<section>
+  <div class="reveal">
+    <p class="section-label">Core Values</p>
+    <h2 class="section-title">What I stand for.</h2>
+  </div>
+  <div class="values-grid">
+    <div class="value-card reveal">
+      <div class="value-icon">🔍</div>
+      <div class="value-title">Curiosity</div>
+      <div class="value-sub">Over comfort</div>
+    </div>
+    <div class="value-card reveal" style="transition-delay:0.05s;">
+      <div class="value-icon">🌊</div>
+      <div class="value-title">Depth</div>
+      <div class="value-sub">Over shortcuts</div>
+    </div>
+    <div class="value-card reveal" style="transition-delay:0.1s;">
+      <div class="value-icon">📚</div>
+      <div class="value-title">Learning</div>
+      <div class="value-sub">Over performance</div>
+    </div>
+    <div class="value-card reveal" style="transition-delay:0.15s;">
+      <div class="value-icon">🌍</div>
+      <div class="value-title">Impact</div>
+      <div class="value-sub">Over recognition</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- GLOBAL ASPIRATIONS -->
+<section id="global">
+  <div class="reveal">
+    <p class="section-label">Global Aspirations</p>
+    <h2 class="section-title">Thinking beyond borders.</h2>
+  </div>
+  <div class="aspiration-panel reveal">
+    <div class="aspiration-left">
+      <p class="aspiration-text">
+        Seeking opportunities to collaborate with international students, researchers, and educators to build <strong>responsible AI tools for learning</strong> — because the best solutions come from diverse perspectives working toward a shared goal.
+      </p>
+      <div class="aspiration-tags">
+        <span class="asp-tag">✈ Exchange Programs</span>
+        <span class="asp-tag">🔬 Research Collaborations</span>
+        <span class="asp-tag">🌍 International Fellowships</span>
+        <span class="asp-tag">🤝 Youth Innovator Networks</span>
+      </div>
+    </div>
+    <div class="aspiration-right">
+      <div class="aspiration-stat"><span class="asp-num">1</span><span class="asp-label">Country so far</span></div>
+      <div class="aspiration-stat"><span class="asp-num">∞</span><span class="asp-label">Countries to go</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- AT A GLANCE -->
+<section id="glance">
+  <div class="reveal">
+    <p class="section-label">At a Glance</p>
+    <h2 class="section-title">The full picture.</h2>
+  </div>
+  <div class="glance-grid reveal">
+    <div class="glance-card">
+      <div class="glance-card-title">Profile</div>
+      <div class="glance-rows">
+        <div class="glance-row"><span class="glance-icon">📍</span><span class="glance-key">Location</span><span class="glance-val">Hyderabad, India</span></div>
+        <div class="glance-row"><span class="glance-icon">🎓</span><span class="glance-key">Education</span><span class="glance-val">Grade 10 Student</span></div>
+        <div class="glance-row"><span class="glance-icon">🎂</span><span class="glance-key">Born</span><span class="glance-val">September 8, 2011</span></div>
+        <div class="glance-row"><span class="glance-icon">🌐</span><span class="glance-key">Languages</span><span class="glance-val">English, Hindi</span></div>
+        <div class="glance-row"><span class="glance-icon">🧠</span><span class="glance-key">Focus Areas</span><span class="glance-val">AI · Education · Human Development</span></div>
+      </div>
+    </div>
+    <div class="glance-card">
+      <div class="glance-card-title">Currently Seeking</div>
+      <div class="seeking-list">
+        <div class="seeking-item"><span class="seek-dot"></span>Global youth programs</div>
+        <div class="seeking-item"><span class="seek-dot"></span>Research mentorship</div>
+        <div class="seeking-item"><span class="seek-dot"></span>AI + Education collaborations</div>
+        <div class="seeking-item"><span class="seek-dot"></span>Opportunities to build real-world impact</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WHAT MAKES ME DIFFERENT -->
+<section id="different">
+  <div class="reveal">
+    <p class="section-label">What Makes Me Different</p>
+    <h2 class="section-title">My edge.</h2>
+  </div>
+  <div class="diff-card reveal">
+    <p class="diff-text">
+      I focus on understanding how students <em>actually learn</em> — not just building tools, but designing systems that improve thinking and independence. Most people ask "how can AI help students?" I ask <em>"how can AI make students better thinkers?"</em> That question changes everything about how I design.
+    </p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TIMELINE -->
+<section id="journey">
+  <div class="reveal">
+    <p class="section-label">My Journey</p>
+    <h2 class="section-title">How I got here.</h2>
+  </div>
+  <div class="timeline">
+    <div class="timeline-item reveal">
+      <p class="timeline-year">2025</p>
+      <p class="timeline-event"><strong>Began exploring AI in education</strong> — started questioning how students really use AI tools and whether they were learning or just getting answers.</p>
+    </div>
+    <div class="timeline-item reveal">
+      <p class="timeline-year">2025</p>
+      <p class="timeline-event"><strong>Launched student AI behavior study</strong> — conducted semi-structured peer interviews to understand patterns, gaps, and student needs firsthand.</p>
+    </div>
+    <div class="timeline-item reveal">
+      <p class="timeline-year">2025</p>
+      <p class="timeline-event"><strong>Founded KhadimHost</strong> — started a digital solutions initiative helping small businesses build meaningful online presence.</p>
+    </div>
+    <div class="timeline-item reveal">
+      <p class="timeline-year">2026</p>
+      <p class="timeline-event"><strong>Developing StudyAura</strong> — turning research insights into a full concept for an AI study assistant that guides thinking, not shortcuts.</p>
+    </div>
+    <div class="timeline-item reveal">
+      <p class="timeline-year">2026 →</p>
+      <p class="timeline-event"><strong>Pursuing global opportunities</strong> — actively seeking international programs, research collaborations, and youth innovation networks.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="reveal">
+    <p class="section-label">Contact</p>
+    <h2 class="section-title">Let's connect.</h2>
+  </div>
+  <div class="contact-panel reveal">
+    <p style="color: var(--text2); font-size: 1.05rem; max-width: 520px; margin: 0 auto; line-height:1.75;">
+      Interested in collaborating, mentoring, or offering opportunities? I would love to connect.
+    </p>
+    <p style="color: var(--text3); font-size: 0.85rem; margin-top: 0.75rem;">Open to conversations about AI in education, global youth programs, research, and collaboration.</p>
+    <div class="contact-links">
+      <a class="contact-link" id="email-link" href="#" onclick="this.href='mailto:manal.aafiya08@gmail.com';return true;">✉ manal.aafiya08@gmail.com</a>
+      <a class="contact-link" href="#">⊹ Portfolio</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Aafiya Manal &nbsp;·&nbsp; Building the future, one system at a time.</p>
+</footer>
+
+
+
+<!-- AURA CHATBOT -->
+<div id="aura-btn" onclick="toggleAura()" title="Chat with Aura">
+  <div id="aura-pulse"></div>
+  <span id="aura-icon">✦</span>
+</div>
+
+<div id="aura-widget">
+  <div id="aura-header">
+    <div id="aura-header-left">
+      <div id="aura-avatar">✦</div>
+      <div>
+        <div id="aura-name">Aura</div>
+        <div id="aura-status"><span id="aura-dot"></span>Aafiya's AI assistant</div>
+      </div>
+    </div>
+    <button id="aura-close" onclick="toggleAura()">✕</button>
+  </div>
+  <div id="aura-messages">
+    <div class="aura-msg aura-bot">
+      <div class="aura-bubble">Hi! I'm <strong>Aura</strong> ✦<br>Ask me anything about Aafiya — her projects, research, goals, or how to reach her.</div>
+      <div class="aura-suggestions">
+        <button onclick="askSuggestion(this)">Who is Aafiya?</button>
+        <button onclick="askSuggestion(this)">What is StudyAura?</button>
+        <button onclick="askSuggestion(this)">What makes her different?</button>
+        <button onclick="askSuggestion(this)">How to contact her?</button>
+      </div>
+    </div>
+  </div>
+  <div id="aura-input-row">
+    <input id="aura-input" type="text" placeholder="Ask me anything..." onkeydown="if(event.key==='Enter')sendAura()" maxlength="200"/>
+    <button id="aura-send" onclick="sendAura()">↑</button>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Aafiya Manal &nbsp;·&nbsp; Building the future, one system at a time.</p>
+</footer>
+
+<script>
+  // Fix email link on load
+  const eLink = document.getElementById('email-link');
+  if (eLink) eLink.href = ['mailto', ':', 'manal.aafiya08', '@', 'gmail.com'].join('');
+
+  // === SCROLL REVEAL ===
+  const reveals = document.querySelectorAll('.reveal');
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => revealObs.observe(el));
+
+  // === SCROLL PROGRESS BAR ===
+  const bar = document.getElementById('scroll-progress');
+  window.addEventListener('scroll', () => {
+    const pct = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+    bar.style.width = Math.min(pct, 100) + '%';
+  });
+
+  // === MOUSE TRAIL ENGINE ===
+  (function() {
+    const tc = document.getElementById('trail-canvas');
+    const ctx = tc.getContext('2d');
+    let W, H;
+    function resize() { W = tc.width = window.innerWidth; H = tc.height = window.innerHeight; }
+    resize();
+    window.addEventListener('resize', resize);
+
+    // Trail points — each has position, age, size, color
+    const trail = [];
+    const MAX = 38;
+    let mx = -999, my = -999;
+
+    // Colour palette cycling: blue → purple → teal
+    const COLORS = [
+      [74, 158, 255],   // electric blue
+      [139, 107, 255],  // indigo
+      [167, 139, 250],  // soft purple
+      [99, 179, 255],   // sky blue
+      [74, 158, 255],
+    ];
+    let colorIdx = 0, colorT = 0;
+
+    function lerpColor(a, b, t) {
+      return [
+        Math.round(a[0] + (b[0]-a[0]) * t),
+        Math.round(a[1] + (b[1]-a[1]) * t),
+        Math.round(a[2] + (b[2]-a[2]) * t),
+      ];
+    }
+
+    document.addEventListener('mousemove', e => {
+      mx = e.clientX; my = e.clientY;
+      colorT += 0.015;
+      if (colorT >= 1) { colorT = 0; colorIdx = (colorIdx + 1) % (COLORS.length - 1); }
+      const col = lerpColor(COLORS[colorIdx], COLORS[colorIdx + 1], colorT);
+
+      // Add new trail point
+      trail.push({
+        x: mx, y: my,
+        life: 1.0,
+        size: 18 + Math.random() * 14,
+        r: col[0], g: col[1], b: col[2],
+        vx: (Math.random() - 0.5) * 0.6,
+        vy: (Math.random() - 0.5) * 0.6,
+      });
+      if (trail.length > MAX) trail.shift();
+    });
+
+    // Big ambient glow that follows cursor lazily
+    let gx = -999, gy = -999;
+
+    (function draw() {
+      ctx.clearRect(0, 0, W, H);
+
+      // Lazy ambient glow
+      gx += (mx - gx) * 0.06;
+      gy += (my - gy) * 0.06;
+      if (mx > 0) {
+        const grad = ctx.createRadialGradient(gx, gy, 0, gx, gy, 220);
+        grad.addColorStop(0, 'rgba(74,158,255,0.07)');
+        grad.addColorStop(0.5, 'rgba(167,139,250,0.04)');
+        grad.addColorStop(1, 'transparent');
+        ctx.fillStyle = grad;
+        ctx.beginPath();
+        ctx.arc(gx, gy, 220, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      // Draw trail orbs from oldest to newest
+      for (let i = 0; i < trail.length; i++) {
+        const p = trail[i];
+        const progress = i / trail.length; // 0=oldest, 1=newest
+        const alpha = p.life * progress * 0.75;
+        const radius = p.size * progress;
+
+        if (radius < 0.5) continue;
+
+        // Outer soft glow
+        const outerGrad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, radius * 2.5);
+        outerGrad.addColorStop(0, `rgba(${p.r},${p.g},${p.b},${alpha * 0.35})`);
+        outerGrad.addColorStop(1, 'transparent');
+        ctx.fillStyle = outerGrad;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, radius * 2.5, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Bright core
+        const coreGrad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, radius);
+        coreGrad.addColorStop(0, `rgba(255,255,255,${alpha * 0.5})`);
+        coreGrad.addColorStop(0.4, `rgba(${p.r},${p.g},${p.b},${alpha * 0.8})`);
+        coreGrad.addColorStop(1, `rgba(${p.r},${p.g},${p.b},0)`);
+        ctx.fillStyle = coreGrad;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, radius, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Drift & decay
+        p.x += p.vx;
+        p.y += p.vy;
+        p.life -= 0.028;
+      }
+
+      // Remove dead points
+      for (let i = trail.length - 1; i >= 0; i--) {
+        if (trail[i].life <= 0) trail.splice(i, 1);
+      }
+
+      requestAnimationFrame(draw);
+    })();
+  })();
+
+  // === TYPING EFFECT ===
+  const typingEl = document.getElementById('typing-text');
+  if (typingEl) {
+    const lines = ['Building systems for deeper learning.','Designing AI that guides thinking.','Researching how students actually learn.'];
+    let li=0,ci=0,del=false,pause=0;
+    function type() {
+      const cur=lines[li];
+      if(!del){typingEl.textContent=cur.slice(0,++ci);if(ci===cur.length){del=true;pause=70;}}
+      else{if(pause-->0){setTimeout(type,30);return;}typingEl.textContent=cur.slice(0,--ci);if(ci===0){del=false;li=(li+1)%lines.length;}}
+      setTimeout(type,del?26:50);
+    }
+    setTimeout(type,1400);
+  }
+
+  // === HERO PARTICLES ===
+  const canvas = document.getElementById('hero-canvas');
+  if (canvas) {
+    const ctx = canvas.getContext('2d');
+    let W, H;
+    const pts = Array.from({length:55},()=>({x:Math.random()*1400,y:Math.random()*800,r:Math.random()*1.1+0.3,dx:(Math.random()-.5)*.22,dy:(Math.random()-.5)*.22,o:Math.random()*.3+.07}));
+    function resize(){W=canvas.width=canvas.offsetWidth;H=canvas.height=canvas.offsetHeight;}
+    resize(); window.addEventListener('resize',resize);
+    (function draw(){
+      ctx.clearRect(0,0,W,H);
+      pts.forEach(p=>{
+        ctx.beginPath();ctx.arc(p.x%W,p.y%H,p.r,0,Math.PI*2);
+        ctx.fillStyle='rgba(122,184,255,'+p.o+')';ctx.fill();
+        p.x+=p.dx;p.y+=p.dy;
+        if(p.x<0)p.x=W;if(p.x>W)p.x=0;if(p.y<0)p.y=H;if(p.y>H)p.y=0;
+      });
+      requestAnimationFrame(draw);
+    })();
+  }
+
+  // === AURA CHATBOT — FULLY OFFLINE SMART ENGINE ===
+  const AURA_KB = [
+    {
+      keys: ['who is aafiya','about aafiya','tell me about','introduce','herself','who are you talking about'],
+      reply: `Aafiya Manal is a 14-year-old student innovator from India 🇮🇳 with a deep passion for artificial intelligence, education, and building systems that genuinely help students learn.\n\nShe believes AI should be a cognitive amplifier — something that strengthens your thinking, not replaces it. That philosophy drives everything she builds.\n\nWant to know about her projects or research?`
+    },
+    {
+      keys: ['studyaura','study aura','ai tutor','flashcard','learning platform','ai study'],
+      reply: `StudyAura is Aafiya's flagship concept — an AI-powered learning platform designed to help students study smarter, not just faster 🧠\n\nKey features in development:\n• AI tutor for deep concept understanding\n• Image-to-flashcard generator\n• Camera-based math solver\n• Motivation & consistency system\n\nStatus: Research & concept development. The goal is an AI that guides thinking — not shortcuts. Pretty exciting, right?`
+    },
+    {
+      keys: ['khadimhost','khadim','digital solutions','small business','website','branding','online presence'],
+      reply: `KhadimHost is Aafiya's digital solutions initiative 🌐 focused on helping small businesses build a meaningful online presence.\n\nIt offers websites, branding, and digital tools so smaller enterprises can compete effectively in today's digital economy.\n\nStatus: Early-stage startup concept. It reflects her entrepreneurial side — she doesn't just think about education, she thinks about real-world impact too.`
+    },
+    {
+      keys: ['research','interview','study','student behavior','ai behavior','methodology','findings','how students use'],
+      reply: `Aafiya conducted a student AI behavior study to understand how young people actually use AI tools 🔬\n\nMethod: Semi-structured peer interviews\nParticipants: Middle & high school students\n\nKey findings:\n• Heavy reliance on AI for answers (without real understanding)\n• Weak time management systems\n• Lack of AI literacy\n• Strong need for guided learning tools\n\nThis research directly shapes what she designs. Real insight from real students.`
+    },
+    {
+      keys: ['goal','future','vision','aspire','dream','plan','long term','where is she going'],
+      reply: `Aafiya's vision is to work at the intersection of technology, education, and human development 🌍\n\nHer long-term goal is to build systems that expand opportunities for students worldwide — especially in communities where access to quality guidance is limited.\n\nShe's actively preparing for global academic programs, research opportunities, and international youth fellowships. Big dreams, and she's already working toward them.`
+    },
+    {
+      keys: ['contact','email','reach','connect','collaborate','work with','hire','opportunity','message'],
+      reply: `You can reach Aafiya directly at:\n📧 manal.aafiya08@gmail.com\n\nShe's open to:\n• Research collaborations\n• Global youth programs\n• Mentorship opportunities\n• Meaningful conversations about AI & education\n\nShe genuinely loves connecting with people who care about the same things she does. Don't hesitate!`
+    },
+    {
+      keys: ['different','unique','special','stand out','edge','what makes','why her'],
+      reply: `Great question ✨ What sets Aafiya apart is her question.\n\nMost people ask: "How can AI help students?"\nAafiya asks: "How can AI make students better thinkers?"\n\nThat single reframe changes everything about how she designs. She's not building features — she's building systems that improve cognition and independence. That's rare at any age.`
+    },
+    {
+      keys: ['value','believe','philosophy','principle','what does she stand for','mindset'],
+      reply: `Aafiya's core values 🌱\n\n• Curiosity over comfort\n• Depth over shortcuts\n• Learning over performance\n• Impact over recognition\n• Responsible use of technology\n• Systems thinking at every scale\n\nThese aren't just words on a page — they're visible in how she approaches every project and decision.`
+    },
+    {
+      keys: ['skill','capable','can she','what can she do','abilities','strengths'],
+      reply: `Here's what Aafiya brings to the table 🛠\n\n• Research & student interviewing\n• AI tool literacy & responsible usage\n• Systems thinking & problem analysis\n• Concept design & product thinking\n• Communication & presentation\n• Digital design basics\n\nShe's 14 and already building real things. The trajectory is clear.`
+    },
+    {
+      keys: ['age','how old','young','14','teenager','student','grade','school'],
+      reply: `Aafiya is 14 years old, currently in Grade 10 in India 🎓\n\nYes — 14. Two projects, original research, a portfolio like this, and a clear philosophy about AI and education. She's not waiting to "grow up" to start building things that matter.\n\nAnything else you'd like to know about her work?`
+    },
+    {
+      keys: ['global','international','program','uwc','fellowship','scholarship','exchange','opportunity'],
+      reply: `Aafiya is actively seeking global academic opportunities 🌍✈️\n\nShe's interested in:\n• Exchange programs & international fellowships\n• Research collaborations across borders\n• Youth innovation networks\n• Mentorship from global educators & builders\n\nHer belief: the best solutions come from diverse perspectives working toward a shared goal. If you know of opportunities — please reach out at manal.aafiya08@gmail.com!`
+    },
+    {
+      keys: ['journey','timeline','history','how did she start','when did','story','background'],
+      reply: `Aafiya's journey so far 🚀\n\n2025 — Started questioning how students really use AI. Are they learning or just getting answers?\n2025 — Conducted her student AI behavior study. Real interviews, real findings.\n2025 — Founded KhadimHost to help small businesses go digital.\n2026 — Developing StudyAura, turning research into a real product concept.\n2026 → — Pursuing global programs and building toward her bigger vision.\n\nStill early. Already impressive.`
+    },
+    {
+      keys: ['hi','hello','hey','good morning','good afternoon','good evening','hola','sup','what\'s up','howdy'],
+      reply: `Hi there! 👋 I'm Aura — Aafiya's AI assistant.\n\nI can tell you all about her projects, research, goals, and how to connect with her.\n\nTry asking:\n• "What is StudyAura?"\n• "What research has she done?"\n• "What makes her different?"\n• "How can I contact her?"`
+    },
+    {
+      keys: ['aura','who are you','what are you','your name','you are'],
+      reply: `I'm Aura ✦ — Aafiya's AI assistant, named after her StudyAura project.\n\nI'm built right into this portfolio to help visitors learn about Aafiya's work, research, and goals — no third-party app needed.\n\nWhat would you like to know about her?`
+    },
+    {
+      keys: ['thank','thanks','great','awesome','cool','nice','wow','impressive','amazing'],
+      reply: `Glad you think so! ✨ Aafiya has put real thought into everything you see here.\n\nIs there anything else you'd like to know — about her projects, research, or how to connect?`
+    },
+    {
+      keys: ['ai','artificial intelligence','machine learning','why ai','ai education'],
+      reply: `Aafiya's take on AI is genuinely thoughtful 🤖\n\nShe believes AI will fundamentally reshape how students learn — and that students urgently need guidance to use it as a partner for thinking, not a substitute for effort.\n\nThat's why her research focuses on AI literacy gaps, and why StudyAura is designed around guided thinking rather than instant answers. She's building the tool she wishes existed.\n\nWant to know more about StudyAura or her research?`
+    }
+  ];
+
+  const AURA_FALLBACK = [
+    `That's a great question! I don't have specific information on that, but Aafiya would love to answer you directly 💬\n\nReach her at: manal.aafiya08@gmail.com`,
+    `Hmm, I'm not sure about that one — but you can ask Aafiya directly at manal.aafiya08@gmail.com ✦\n\nOr try asking me about her projects, research, or goals!`,
+    `I don't have that info in my knowledge base, but Aafiya's always open to connecting 🌟\n\nEmail: manal.aafiya08@gmail.com`
+  ];
+
+  let auraOpen = false;
+  let auraFallbackIdx = 0;
+
+  function auraRespond(input) {
+    const q = input.toLowerCase().trim();
+    for (const entry of AURA_KB) {
+      if (entry.keys.some(k => q.includes(k))) return entry.reply;
+    }
+    return AURA_FALLBACK[auraFallbackIdx++ % AURA_FALLBACK.length];
+  }
+
+  function toggleAura() {
+    auraOpen = !auraOpen;
+    document.getElementById('aura-widget').classList.toggle('open', auraOpen);
+    document.getElementById('aura-btn').classList.toggle('active', auraOpen);
+    if (auraOpen) setTimeout(()=>document.getElementById('aura-input').focus(), 300);
+  }
+
+  function askSuggestion(btn) {
+    document.getElementById('aura-input').value = btn.textContent;
+    btn.closest('.aura-suggestions').remove();
+    sendAura();
+  }
+
+  function appendMsg(role, text) {
+    const msgs = document.getElementById('aura-messages');
+    const div = document.createElement('div');
+    div.className = 'aura-msg ' + (role==='user'?'aura-user':'aura-bot');
+    const bubble = document.createElement('div');
+    bubble.className = 'aura-bubble';
+    bubble.innerHTML = text.replace(/\n/g,'<br>');
+    div.appendChild(bubble);
+    msgs.appendChild(div);
+    msgs.scrollTop = msgs.scrollHeight;
+    return bubble;
+  }
+
+  function showTyping() {
+    const msgs = document.getElementById('aura-messages');
+    const div = document.createElement('div');
+    div.className = 'aura-msg aura-bot'; div.id = 'aura-typing';
+    div.innerHTML = '<div class="aura-bubble aura-typing-dots"><span></span><span></span><span></span></div>';
+    msgs.appendChild(div); msgs.scrollTop = msgs.scrollHeight;
+  }
+
+  function sendAura() {
+    const input = document.getElementById('aura-input');
+    const text = input.value.trim();
+    if (!text) return;
+    input.value = '';
+    appendMsg('user', text);
+    showTyping();
+    document.getElementById('aura-send').disabled = true;
+
+    // Simulate a natural thinking delay (600–1100ms)
+    const delay = 600 + Math.random() * 500;
+    setTimeout(() => {
+      document.getElementById('aura-typing')?.remove();
+      const reply = auraRespond(text);
+      appendMsg('bot', reply);
+      document.getElementById('aura-send').disabled = false;
+      document.getElementById('aura-input').focus();
+    }, delay);
+  }
+</script>
+</body>
+</html>
